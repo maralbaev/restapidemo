@@ -19,7 +19,7 @@ node {
     stage("Deployment") {
       sh "chmod +x ./gradlew"
       sh 'nohup ./gradlew bootRun -Dserver.port=8081 &'
-      sh 'echo #!asdf2580 | sudo docker login -u muratbek7 --password-stdin'
+      sh 'echo #!asdf2580 | sudo docker login -u muratbek7@gmail.com --password-stdin'
       sh 'sudo docker build -t muratbek7/restapidemo:1.0 .'
     }
     stage('Push Docker Image') {
